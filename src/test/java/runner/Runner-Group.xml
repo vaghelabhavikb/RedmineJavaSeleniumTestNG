@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="classes" thread-count="2">
+	<listeners>
+		<listener class-name= "testnglib.TestListeners"/>
+	</listeners>
+  <test name="Test">
+	<groups>
+	    <run>
+	      <!-- <exclude name="sanity"/>
+	      <exclude name="regression"/> -->
+<!-- 	      <include name="backlog"/> -->
+	      <include name="planning"/>
+	    </run>
+	</groups>
+	
+	<classes>
+		<class name="tests.TProductOwner"/>
+		<class name="tests.TScrumMaster"/>
+		<class name="tests.TSprint1Work"/>
+		<!-- <class name="tests.TUserstoryDetails"/> -->
+	</classes>
+	
+	<!-- <packages>
+		<package name="tests"/>
+	</packages> -->
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,120 @@
+--------------------------------
+Android App
+--------------------------------
+https://play.google.com/store/apps/details?id=com.ideil.redmine
+
+
+------------------------------
+Setup
+------------------------------
+
+1. Install Docker Desktop for Windows
+
+2. Run this command:
+	docker run -d --name redmine -p 3000:3000 redmine:latest
+
+
+------------------------------
+Login
+------------------------------
+1. In your browser, go to:
+	http://localhost:3000
+	
+	You should see the Redmine web UI.
+
+2. Default login:
+	Username: admin  
+	Password: admin
+	
+3. Change password to: localadmin
+
+4.Provide details like:
+	FN: Bhavik
+	LN: Vaghela
+	Email: bhavik.vaghela@gmail.com
+	
+5. Select timezone and save.
+
+-----------------------------------
+Enable API and generate key
+-----------------------------------
+1. Open Redmine in your browser: http://localhost:3000 (or http://localhost:PORT if you mapped a different port).
+
+2. Login as admin / localadmin (or whatever credentials you set).
+
+3. Top menu → Administration.
+
+4. Click Settings → API tab.
+
+5. Check Enable REST API (or REST API toggle).
+
+6. Click Save.
+
+Now generate API key:
+
+1. While logged in as the user you want to use for tests (e.g., admin), click your username (top-right) → My account.
+
+2. Scroll to API access key.
+
+3. Click Show or Generate to reveal the key.
+
+4. Copy that key — you’ll use it in X-Redmine-API-Key header
+
+My API Key: 'b4deae2ff4b9c987fc7ab3c2fa14cc2e760947ed'
+
+Quick test if this GET the content in browser: http://localhost:3000/issues.json?key=YOUR_API_KEY
+
+--------------------------------------------------------
+Redmine API Documentation and application documentation
+--------------------------------------------------------
+
+API documentation: https://www.redmine.org/projects/redmine/wiki/Rest_api
+
+Application Documentation: https://www.redmine.org/projects/redmine/wiki/User_Guide
+
+--------------------------------------
+Restore the initial point for testing
+--------------------------------------
+If your current Redmine container is named redmine, run:
+
+	docker commit redmine redmine_snapshot:v1
+
+This creates a new Docker image that contains:
+
+✔ all your settings
+✔ plugins
+✔ themes
+✔ database data
+✔ any modifications you made inside the container
+
+Basically: a full frozen state of Redmine at this moment.
+
+Restore it anytime:
+
+Stop & remove current container:
+
+	docker stop redmine
+	docker rm redmine
+
+
+Run from your snapshot:
+
+	docker run -d --name redmine -p 3000:3000 redmine_snapshot:v1
+
+Boom — your Redmine is restored exactly the way it was when you committed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

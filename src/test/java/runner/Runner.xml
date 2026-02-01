@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="classes" thread-count="1">
+
+	<listeners>
+		<listener class-name="testnglib.TestListeners" />
+	</listeners>
+
+	<test name="Test">
+
+		<!-- <groups> <run> <include name="sprintwork"/> </run> </groups> -->
+
+		<classes>
+			<class name="tests.TSprint1Work">
+				<methods>
+					<include name="moveToTopPriority" />
+					<include name="myTasksInDashboard" />
+					<include name="updateTaskStatusOfSprint1Stories" />
+					<include name="unblockATask" />
+					<include name="blockATask" />
+					<include name="deleteATask" />
+					<include name="filterWithTagNMarkStoryDone" />
+					<include name="unplanAStory" />
+					<include name="shiftStoryToNextSprint" />
+				</methods>
+			</class>
+			<class name="tests.TProductOwner"> <!-- -->
+				<methods>
+					<include name="createFeatures" />
+					<include name="createStories" />
+				</methods>
+			</class>
+			<class name="tests.TScrumMaster">
+				<methods>
+					<include name="estimateSprint1Stories" />
+					<include name="planNActivateSprint1" />
+					<include name="checkCumulativeFlowChart" />
+				</methods>
+			</class>
+			<class name="tests.TUserstoryDetails">
+				<methods>
+					<include name="addDetailInSprint1Stories" />
+					<include name="addTasksInSprint1Stories" />
+					<include name="attachFileToStory" />
+				</methods>
+			</class>
+			<class name="tests.TSprint1Work2">
+				<methods>
+					<include name="changeTaskStatusByDragNDrop" />
+					<include name="taskboardFilter" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

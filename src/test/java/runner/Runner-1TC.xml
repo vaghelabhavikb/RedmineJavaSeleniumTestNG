@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test name="Test">
+	<classes>
+			<class name="tests.Projects">
+				<methods>
+					<include name="createProjectWithName" />			
+				</methods>
+			</class>		
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
