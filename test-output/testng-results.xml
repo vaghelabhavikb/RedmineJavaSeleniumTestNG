@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[TEMP LOG]]>
+    </line>
+    <line>
+      <![CDATA[TEMP LOG]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-02-02T15:08:32 IST" name="Suite" finished-at="2026-02-02T15:09:59 IST" duration-ms="87443">
+    <groups>
+      <group name="smoke">
+        <method signature="Projects.createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" name="createProjectWithName" class="tests.Projects"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-02-02T15:08:32 IST" name="Test" finished-at="2026-02-02T15:09:59 IST" duration-ms="87443">
+      <class name="tests.Projects">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:08:32 IST" name="setUp" finished-at="2026-02-02T15:09:27 IST" duration-ms="55038" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@72889280]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:09:27 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-02-02T15:09:32 IST" duration-ms="5113" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Assets]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TEMP LOG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createProjectWithName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:09:32 IST" name="tearDown" finished-at="2026-02-02T15:09:33 IST" duration-ms="649" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:09:33 IST" name="setUp" finished-at="2026-02-02T15:09:55 IST" duration-ms="22594" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@72889280]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:09:55 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-02-02T15:09:59 IST" duration-ms="3638" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Fuel Records]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TEMP LOG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createProjectWithName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-02-02T15:09:59 IST" name="tearDown" finished-at="2026-02-02T15:09:59 IST" duration-ms="327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Projects -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
