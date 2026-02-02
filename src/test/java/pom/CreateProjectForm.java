@@ -23,7 +23,8 @@ public class CreateProjectForm {
 	By projCreate = By.name("commit");
 	
 	By successAlert = By.id("flash_notice");
-
+	By createdProjName = By.className("current-project");
+	
 	public void createProject(String projName) {
 		cmd.sendText(name, projName);
 		cmd.click(projCreate);
@@ -59,4 +60,9 @@ public class CreateProjectForm {
 
 		cmd.click(projCreate);
 	}
+	
+	public String getCreatedProjName() {
+		return cmd.getText(createdProjName);
+	}
+	
 }
