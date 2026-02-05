@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 import utilitylib.WebDriverUtilities;
 
@@ -25,40 +26,45 @@ public class CreateProjectForm {
 	By successAlert = By.id("flash_notice");
 	By createdProjName = By.className("current-project");
 	
+	By subProjectOfDD = By.id("project_parent_id");
+	
+	
 	public void createProject(String projName) {
 		cmd.sendText(name, projName);
 		cmd.click(projCreate);
 		cmd.findElement(successAlert);
 	}
 
-	public void createProject(Map<String, String> withOptionalFields) {
-		Map<String, String> map = withOptionalFields;
+	public void createProject(Map<String, String> map) {
 		cmd.sendText(name, map.get("Project Name"));
 		if (map.containsKey("Description"))
-			cmd.sendText(name, map.get("Description"));
+			cmd.sendText(desc, map.get("Description"));
 		if (map.containsKey("Identifier")) {
 			cmd.clearText(identifier);
 			cmd.sendText(identifier, map.get("Identifier"));
 		}
 		if (map.containsKey("Mark Public")) {
-			if (!cmd.isSelected(markPublic))
+			if(map.get("Mark Public").equals("false"))
 				cmd.click(markPublic);
 		}
 		if (map.containsKey("Sub Project Of")) {
-			cmd.click(subOfProj);
 			switch (map.get("Sub Project Of")) {
 			case "DocID":
-//				cmd.click(docIDProj);
+				cmd.selectByValue(subProjectOfDD, "DocID");
 				break;
 			default:
-//				scenario.log("Project Name is invalid: " + map.get("Sub Project Of"));
-//				scenario.log(
-//						"As this is an optional field, continuing with the Project creation assuming this as bad data");
+				Reporter.log("Project Name is invalid: " + map.get("Sub Project Of"));
+				Reporter.log(
+						"As this is an optional field, continuing with the Project creation assuming this as bad data");
 				break;
 			}
 		}
 
 		cmd.click(projCreate);
+	}
+	
+	public boolean isSuccessfulCreationAlertDisplayed() {
+		return cmd.isElementVisible(successAlert);
 	}
 	
 	public String getCreatedProjName() {

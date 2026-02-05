@@ -229,6 +229,10 @@ public class WebDriverUtilities {
 	public Select getSelectElement(By by) {
 		return new Select(ww.until(ExpectedConditions.presenceOfElementLocated(by)));
 	}
+	
+	public void selectByValue(By by, String value) {
+		getSelectElement(by).selectByContainsVisibleText(value);
+	}
 
 	public boolean checkElementIsEnabled(By by) {
 		boolean result = false;

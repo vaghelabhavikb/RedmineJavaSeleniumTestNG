@@ -2,11 +2,11 @@ package tests;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -52,7 +52,7 @@ public class Projects {
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 
 	@Test(groups = {
@@ -61,7 +61,19 @@ public class Projects {
 		landingPage.navToProjectsPage();
 		projectQueryPage.openProjCreationForm();
 		createProjectForm.createProject(name);
-		
+
+		Assert.assertTrue(createProjectForm.isSuccessfulCreationAlertDisplayed());
 		Assert.assertTrue(createProjectForm.getCreatedProjName().equals(name));
+	}
+
+	@Test(groups = {
+			"regression" }, dataProviderClass = utilitylib.DataProviders.class, dataProvider = "ProjectDetailsWithOptionalFields", description = "Create a project with optional fields")
+	public void createProjWithOptionalFields(Map<String, String> projData) {
+		landingPage.navToProjectsPage();
+		projectQueryPage.openProjCreationForm();
+		createProjectForm.createProject(projData);
+		
+		Assert.assertTrue(createProjectForm.isSuccessfulCreationAlertDisplayed());
+		Assert.assertTrue(createProjectForm.getCreatedProjName().equals(projData.get("Project Name")));
 	}
 }

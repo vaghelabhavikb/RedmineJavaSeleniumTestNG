@@ -103,12 +103,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Projects" class="method navigator-link" hash-for-method="createProjectWithName(Assets)">createProjectWithName(Assets)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tests.Projects" class="method navigator-link" hash-for-method="createProjWithOptionalFields({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records})">createProjWithOptionalFields({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Projects" class="method navigator-link" hash-for-method="createProjectWithName(Fuel Records)">createProjectWithName(Fuel Records)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tests.Projects" class="method navigator-link" hash-for-method="createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...)">createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -131,22 +131,22 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createProjectWithName(Assets)">
-                  </a> <!-- createProjectWithName(Assets) -->
-                  <span class="method-name">createProjectWithName</span>
-                  <span class="parameters">(Assets)</span>
+                  <a name="createProjWithOptionalFields({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records})">
+                  </a> <!-- createProjWithOptionalFields({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records}) -->
+                  <span class="method-name">createProjWithOptionalFields</span>
+                  <span class="parameters">({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records})</span>
                   <em>
-(Create a project with only name field)                  </em>
+(Create a project with optional fields)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="createProjectWithName(Fuel Records)">
-                  </a> <!-- createProjectWithName(Fuel Records) -->
-                  <span class="method-name">createProjectWithName</span>
-                  <span class="parameters">(Fuel Records)</span>
+                  <a name="createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...)">
+                  </a> <!-- createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...) -->
+                  <span class="method-name">createProjWithOptionalFields</span>
+                  <span class="parameters">({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Identifier=acc5})</span>
                   <em>
-(Create a project with only name field)                  </em>
+(Create a project with optional fields)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -165,7 +165,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;tests.Projects&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;createProjectWithName&quot;/&gt;
+          &lt;include name=&quot;createProjWithOptionalFields&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- tests.Projects --&gt;
     &lt;/classes&gt;
@@ -192,10 +192,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">smoke</span>
+              <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">createProjectWithName</span>
+                <span class="method-in-group-name">createProjWithOptionalFields</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -217,18 +217,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createProjectWithName')
+data.setCell(0, 1, 'createProjWithOptionalFields')
 data.setCell(0, 2, 'tests.Projects')
-data.setCell(0, 3, 5113);
+data.setCell(0, 3, 3072);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createProjectWithName')
+data.setCell(1, 1, 'createProjWithOptionalFields')
 data.setCell(1, 2, 'tests.Projects')
-data.setCell(1, 3, 3638);
+data.setCell(1, 3, 2355);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -240,24 +240,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">createProjectWithName(Assets)</span>
+              <span class="reporter-method-name">createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...)</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">TEMP LOG</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">createProjectWithName(Fuel Records)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">TEMP LOG</span>
+                <span class="reporter-method-output">Project Name is invalid: DocID1</span>
+                <span class="reporter-method-output">As this is an optional field, continuing with the Project creation assuming this as bad data</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.Projects</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">createProjectWithName</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -268,28 +270,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Projects</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(org.testng.TestRunner@72889280)</span>
+                <span class="method-name">setUp(org.testng.TestRunner@7af1cd63)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">createProjectWithName(Assets)</span>
-                <span class="method-start">55039 ms</span>
+                <span class="method-name">createProjWithOptionalFields({Project Name=Vendors5, Sub Project Of=DocID, Mark Public=true, Description=Vendors Records})</span>
+                <span class="method-start">10340 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">60158 ms</span>
+                <span class="method-start">12703 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(org.testng.TestRunner@72889280)</span>
-                <span class="method-start">60808 ms</span>
+                <span class="method-name">setUp(org.testng.TestRunner@7af1cd63)</span>
+                <span class="method-start">12712 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">createProjectWithName(Fuel Records)</span>
-                <span class="method-start">83402 ms</span>
+                <span class="method-name">createProjWithOptionalFields({Project Name=Accounts5, Sub Project Of=DocID1, Mark Public=false, Description=Accounts Records, Ide...)</span>
+                <span class="method-start">22883 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">87043 ms</span>
+                <span class="method-start">25957 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

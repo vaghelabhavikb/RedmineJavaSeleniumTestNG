@@ -3,8 +3,8 @@
   <test name="Test">
 	<classes>
 			<class name="tests.Projects">
-				<methods>
-					<include name="createProjectWithName" />			
+				<methods>	
+					<include name="createProjWithOptionalFields" />					
 				</methods>
 			</class>		
     </classes>
