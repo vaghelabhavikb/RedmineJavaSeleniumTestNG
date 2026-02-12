@@ -65,6 +65,15 @@ public class WebDriverUtilities {
 		return ww.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 
+	public boolean isElementFoundWithoutWait(By by) {
+		try {
+			driver.findElement(by);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
 	public boolean isElementVisible(By by) {
 		WebElement ele = null;
 		try {

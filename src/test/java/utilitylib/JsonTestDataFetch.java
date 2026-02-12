@@ -1,15 +1,16 @@
 package utilitylib;
 
 import static config.EnvVars.jsonFileExt;
-import static config.EnvVars.tdFolderPath;
+import static config.EnvVars.tdProjectsPath;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Set;
 
 import com.jayway.jsonpath.DocumentContext;
@@ -27,19 +28,18 @@ public class JsonTestDataFetch {
 	public ArrayList<String> tdList = new ArrayList<String>();
 	public HashMap<String, ArrayList<String>> tdMap = new HashMap<String, ArrayList<String>>();
 	
-//	public JsonTestDataFetch(String fileName) {
-//
-//		jsonFile = testDataFolderPath + fileName;
-//		try {
-//			docReader = JsonPath.parse(new File(jsonFile + jsonFileExt));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public JsonTestDataFetch(String fileName) {
+
+		try {
+			docReader = JsonPath.parse(tdProjectsPath.resolve(Paths.get(fileName + jsonFileExt)).toAbsolutePath().toFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public JsonTestDataFetch(Path path) {
 		try {
-			docReader = JsonPath.parse(path.toFile());
+			docReader = JsonPath.parse(path.toAbsolutePath().toFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -110,5 +110,21 @@ public class JsonTestDataFetch {
 	
 	public void clearTDMap() {
 		tdMap.clear();
+	}
+
+	public List<LinkedHashMap<String, String>> getJsonObjInJsonArray(String path) {
+		List<LinkedHashMap<String, String>> jsonObjsMapList = new ArrayList<LinkedHashMap<String, String>>();
+		JSONArray arr = docReader.read(path);
+		for (Object obj : arr) {
+//			JSONObject jsonObj = (JSONObject) obj;
+			LinkedHashMap<String, String> map = (LinkedHashMap<String, String>) obj;
+			//			HashMap<String, String> map = new HashMap<String, String>();
+//			for(String key : jsonObj.keySet()) {
+//				map.put(key, jsonObj.get(key).toString());
+//			}
+			jsonObjsMapList.add(map);
+		}
+		
+		return jsonObjsMapList;
 	}
 }

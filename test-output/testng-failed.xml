@@ -5,9 +5,9 @@
     <classes>
       <class name="tests.Projects">
         <methods>
+          <include name="createIssues" invocation-numbers="1"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="createProjWithOptionalFields"/>
         </methods>
       </class> <!-- tests.Projects -->
     </classes>
