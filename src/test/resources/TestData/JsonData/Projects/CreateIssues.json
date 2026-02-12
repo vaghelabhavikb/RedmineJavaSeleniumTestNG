@@ -1,0 +1,19 @@
+{
+	"issues": [
+		{
+			"Tracker": "Story",
+			"Subject": "Ability to insert DocID in the footer of last page",
+			"Description": "This feature will provide ability to insert DocID in the footer of last page of the document.\nUser can also add/remove/edit the inserted DocID",
+			"Status": "Open",
+			"Priority": "Medium",
+			"StartDate": "05-03-2026"
+		},
+		{
+			"Tracker": "Story",
+			"Subject": "Ability to insert DocID in the Header of last page",
+			"Status": "Open",
+			"Priority": "Low",
+			"EstimatedTime": "5:00"
+		}
+	]
+}

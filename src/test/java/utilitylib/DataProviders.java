@@ -2,12 +2,16 @@ package utilitylib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.testng.annotations.DataProvider;
 
 public class DataProviders {
 
+	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch("CreateIssues");
+	
 	@DataProvider(name = "ProjectNames")
 	public Object[] projectNames() {
 		return new Object[] { "Assets", "Fuel Records" };
@@ -37,6 +41,13 @@ public class DataProviders {
 		return new Object[] {
 			projects.get(0), projects.get(1)	
 		};
+	}
+	
+	@DataProvider(name="CreateIssues")
+	public Object[] createIssues() {
+		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
+		listMaps = createIssuesJson.getJsonObjInJsonArray("issues");
+		return new Object[] { listMaps.get(0), listMaps.get(1) };
 	}
 
 }

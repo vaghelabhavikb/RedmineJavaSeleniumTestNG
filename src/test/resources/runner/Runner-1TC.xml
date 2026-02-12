@@ -4,7 +4,7 @@
 	<classes>
 			<class name="tests.Projects">
 				<methods>	
-					<include name="createProjWithOptionalFields" />					
+					<include name="createIssues" />					
 				</methods>
 			</class>		
     </classes>

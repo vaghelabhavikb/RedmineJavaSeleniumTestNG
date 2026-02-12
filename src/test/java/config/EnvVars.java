@@ -7,6 +7,8 @@ public class EnvVars {
 
 //	public static String testDataFolderPath = System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\";
 	public static final Path tdFolderPath = Paths.get("src", "test", "resources", "TestData");
+	public static final Path jsonTDPath = tdFolderPath.resolve("JsonData");
+	public static final Path tdProjectsPath = jsonTDPath.resolve("Projects");
 
 	// Alternative styles — all correct and portable
 //	Path base = Paths.get("src/test/resources");
