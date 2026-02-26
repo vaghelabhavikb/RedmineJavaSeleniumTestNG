@@ -3,36 +3,48 @@ package gitworkflows;
 public class CodingBat {
 
 	public static void main(String[] args) {
-		System.out.println(CodingBat.countTriple("xxxabyyyycd"));
-	}
-	
-	public static int countTriple(String str) {
-		
-		char[] arr = str.toCharArray();
-		int len = arr.length;
-		
-		if (len == 0) 
-			return 0;
-		
-		int totalCount = 0;
-		int counter = 1;
-		char lastChar = arr[0];
-		
-		for(int i=1; i<len; i++) {
-			if(lastChar == arr[i]) {
-				counter++;
-				if (counter == 3) {
-					totalCount++;
-					counter--;
-				}
-			} else {
-				lastChar = arr[i];
-				counter = 1;
-			}
-		}
-		
-		return totalCount;
+		System.out.println(CodingBat.gHappy("xxggyygxx"));
 	}
 
+	public static boolean gHappy(String str) {
+
+		char[] arr = str.toCharArray();
+		int len = arr.length;
+
+		if (len == 1)
+			return false;
+
+		if(len ==0)
+			return true;
+		
+		int gCount = 0;
+		boolean countStarted = false;
+
+		// xxggyygxx
+		for (int i = 0; i < len; i++) {
+			switch (arr[i]) {
+				case 'g':
+					if (!countStarted) {
+						countStarted = true;
+					}
+					gCount++;
+					break;
+				default:
+					if (countStarted && gCount == 1) {
+						return false;
+					} else {
+						countStarted = false;
+						gCount = 0;
+					}
+					break;
+			}
+		}
+		if (gCount == 1) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
 
 }
