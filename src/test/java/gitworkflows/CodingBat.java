@@ -3,8 +3,8 @@ package gitworkflows;
 public class CodingBat {
 
 	public static void main(String[] args) {
-		int i = 1;
-		int j = 1;
+		int i = 0;
+		int j = 0;
 	}
 
 }
