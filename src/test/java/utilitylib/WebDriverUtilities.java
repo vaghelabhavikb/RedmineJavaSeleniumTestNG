@@ -10,7 +10,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -270,6 +272,27 @@ public class WebDriverUtilities {
 		return tableData;
 	}
 
+	public List<Map<String,String>> getTableDataMap(By by) {
+		WebElement table = findElement(by);
+		List<WebElement> rows = table.findElements(By.xpath("//tbody/tr"));
+		List<WebElement> headers = table.findElements(By.xpath("(//tr)[1]/th"));
+		List<Map<String,String>> tableData = new ArrayList<Map<String,String>>();
+
+		for (int i = 0; i < rows.size(); i++) {
+			List<WebElement> rowEles = rows.get(i).findElements(By.tagName("td"));
+			tableData.add(new HashMap<String, String>());
+			for (int j = 0; j< headers.size(); j++) {
+				if(!headers.get(j).getText().equals("")) {
+					tableData.get(i).put(headers.get(j).getText(), rows.get(i).findElements(By.tagName("td")).get(j).getText());
+				}
+			}
+//			for (WebElement ele : rows.get(i).findElements(By.tagName("td"))) {
+//				System.out.println(ele.getText());
+//			}
+		}
+		return tableData;
+	}
+	
 	public List<WebElement> findMultiElement(By by) {
 //	public List<WebElement> findMultiElement(By by, int minElementsCount, int findAllAttemptCount){
 		return ww.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));

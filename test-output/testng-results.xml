@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-12T17:20:20 IST" name="Suite" finished-at="2026-02-12T17:21:02 IST" duration-ms="42104">
+  <suite started-at="2026-02-28T23:03:17 IST" name="Suite" finished-at="2026-02-28T23:03:47 IST" duration-ms="30307">
     <groups>
-      <group name="smoke">
-        <method signature="Projects.createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@1d8bd0de]" name="createIssues" class="tests.Projects"/>
-      </group> <!-- smoke -->
+      <group name="regression">
+        <method signature="Users.createUsers(java.util.LinkedHashMap)[pri:0, instance:tests.Users@5ab9e72c]" name="createUsers" class="tests.Users"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2026-02-12T17:20:20 IST" name="Test" finished-at="2026-02-12T17:21:02 IST" duration-ms="42104">
-      <class name="tests.Projects">
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:20:20 IST" name="setUp" finished-at="2026-02-12T17:20:33 IST" duration-ms="12826" status="PASS">
+    <test started-at="2026-02-28T23:03:17 IST" name="Test" finished-at="2026-02-28T23:03:47 IST" duration-ms="30307">
+      <class name="tests.Users">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:17 IST" name="setUp" finished-at="2026-02-28T23:03:27 IST" duration-ms="10110" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@23ee75c5]]>
+                <![CDATA[org.testng.TestRunner@9d7ccfe]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:20:33 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-02-12T17:20:44 IST" duration-ms="11306" status="PASS">
+        <test-method signature="createUsers(java.util.LinkedHashMap)[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:27 IST" name="createUsers" description="Post time spent for an issue" data-provider="CreateUsers" finished-at="2026-02-28T23:03:32 IST" duration-ms="5281" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Tracker=Story, Subject=Ability to insert DocID in the footer of last page, Description=This feature will provide ability to insert DocID in the footer of last page of the document.
-User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, StartDate=05-03-2026}]]>
+                <![CDATA[{Login=JoeUpton, First name=Joe, Last name=Upton, Email=JoeUpton@Gmail.com, Administrator=Yes, Password=JoeUpton@123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createIssues -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:20:44 IST" name="tearDown" finished-at="2026-02-12T17:20:44 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- createUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:32 IST" name="tearDown" finished-at="2026-02-28T23:03:32 IST" duration-ms="398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:20:44 IST" name="setUp" finished-at="2026-02-12T17:20:56 IST" duration-ms="11633" status="PASS">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:32 IST" name="setUp" finished-at="2026-02-28T23:03:41 IST" duration-ms="8881" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@23ee75c5]]>
+                <![CDATA[org.testng.TestRunner@9d7ccfe]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:20:56 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-02-12T17:21:02 IST" duration-ms="6159" status="PASS">
+        <test-method signature="createUsers(java.util.LinkedHashMap)[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:41 IST" name="createUsers" description="Post time spent for an issue" data-provider="CreateUsers" finished-at="2026-02-28T23:03:47 IST" duration-ms="5319" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Tracker=Story, Subject=Ability to insert DocID in the Header of last page, Status=Open, Priority=Low, EstimatedTime=5:00}]]>
+                <![CDATA[{Login=GeryNewman, First name=Gery, Last name=Newman, Email=GeryNewman@Gmail.com, Password=GeryNewman@123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createIssues -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@1d8bd0de]" started-at="2026-02-12T17:21:02 IST" name="tearDown" finished-at="2026-02-12T17:21:02 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- createUsers -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Users@5ab9e72c]" started-at="2026-02-28T23:03:47 IST" name="tearDown" finished-at="2026-02-28T23:03:47 IST" duration-ms="215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.Projects -->
+      </class> <!-- tests.Users -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
