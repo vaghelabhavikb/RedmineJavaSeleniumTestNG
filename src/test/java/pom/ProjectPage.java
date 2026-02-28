@@ -14,9 +14,13 @@ public class ProjectPage {
 	}
 	
 	By issuesLK = By.linkText("Issues");
+	By spentTimeLK = By.linkText("Spent time");
 	
 	public void navToIssuesTab() {
 		cmd.click(issuesLK);
 	}
 	
+	public void navToSpentTimeTab() {
+		cmd.click(spentTimeLK);
+	}
 }
