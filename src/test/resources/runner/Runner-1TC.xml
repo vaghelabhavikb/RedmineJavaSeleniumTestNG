@@ -4,7 +4,7 @@
 	<classes>
 			<class name="tests.Projects">
 				<methods>	
-					<include name="createIssues" />					
+					<include name="postTimeSpent" />					
 				</methods>
 			</class>		
     </classes>

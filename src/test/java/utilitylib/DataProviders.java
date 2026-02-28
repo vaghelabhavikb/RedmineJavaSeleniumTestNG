@@ -11,7 +11,8 @@ import org.testng.annotations.DataProvider;
 public class DataProviders {
 
 	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch("CreateIssues");
-	
+	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch("PostSpentTime");
+
 	@DataProvider(name = "ProjectNames")
 	public Object[] projectNames() {
 		return new Object[] { "Assets", "Fuel Records" };
@@ -34,20 +35,25 @@ public class DataProviders {
 		secondProject.put("Mark Public", "false");
 		secondProject.put("Identifier", "acc");
 		secondProject.put("Sub Project Of", "DocID1");
-		
+
 		projects.add(firstProject);
 		projects.add(secondProject);
 
-		return new Object[] {
-			projects.get(0), projects.get(1)	
-		};
+		return new Object[] { projects.get(0), projects.get(1) };
 	}
-	
-	@DataProvider(name="CreateIssues")
+
+	@DataProvider(name = "CreateIssues")
 	public Object[] createIssues() {
 		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
 		listMaps = createIssuesJson.getJsonObjInJsonArray("issues");
 		return new Object[] { listMaps.get(0), listMaps.get(1) };
+	}
+
+	@DataProvider(name = "PostSpentTime")
+	public Object[] postSpentTime() {
+		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
+		listMaps = postSpentTimeJson.getJsonObjInJsonArray("PostTime");
+		return new Object[] { listMaps.get(0), listMaps.get(1), listMaps.get(2) };
 	}
 
 }

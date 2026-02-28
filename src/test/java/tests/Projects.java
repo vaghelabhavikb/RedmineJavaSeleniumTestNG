@@ -18,12 +18,14 @@ import org.testng.asserts.SoftAssert;
 
 import pom.CreateIssueForm;
 import pom.CreateProjectForm;
+import pom.CreateSpentTimeForm;
 import pom.IssuesTab;
 import pom.LandingPage;
 import pom.LoginPage;
 import pom.ProjectIssueInfoPage;
 import pom.ProjectPage;
 import pom.ProjectsQueryPage;
+import pom.SpentTimeTab;
 import utilitylib.BaseClass;
 import utilitylib.JsonTestDataFetch;
 
@@ -37,7 +39,10 @@ public class Projects {
 	CreateProjectForm createProjectForm;
 	ProjectPage projectPage;
 	IssuesTab issuesTab;
+	SpentTimeTab spentTimeTab;
+
 	CreateIssueForm createIssueForm;
+	CreateSpentTimeForm createSpentTimeForm;
 	ProjectIssueInfoPage projectIssueInfoPage;
 
 	JsonTestDataFetch loginJson;
@@ -58,8 +63,11 @@ public class Projects {
 		createProjectForm = new CreateProjectForm(driver);
 		projectPage = new ProjectPage(driver);
 		issuesTab = new IssuesTab(driver);
+		spentTimeTab = new SpentTimeTab(driver);
+
 		createIssueForm = new CreateIssueForm(driver);
 		projectIssueInfoPage = new ProjectIssueInfoPage(driver);
+		createSpentTimeForm = new CreateSpentTimeForm(driver);
 
 		loginPage.navToLoginPage();
 		loginPage.login(loginJson.getTD("$['Main User']['UserName']"), loginJson.getTD("$['Main User']['Password']"));
@@ -68,7 +76,7 @@ public class Projects {
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 
 	@Test(groups = {
@@ -114,6 +122,35 @@ public class Projects {
 				break;
 			default:
 				sa.assertTrue(actualIssueInfo.get(fieldName).contains(map.get(fieldName)), fieldName + " comparison");
+				break;
+			}
+		}
+		sa.assertAll();
+	}
+
+	@Test(groups = {
+			"regression" }, dataProviderClass = utilitylib.DataProviders.class, dataProvider = "PostSpentTime", description = "Post time spent for an issue")
+	public void postTimeSpent(LinkedHashMap<String, String> map) {
+		projectQueryPage.openProject("DocID");
+		projectPage.navToSpentTimeTab();
+		spentTimeTab.launchSpentTimeCreationForm();
+		createSpentTimeForm.postSpentTime(map);
+
+		SoftAssert sa = new SoftAssert();
+		Map<String, String> act = spentTimeTab.getTimeEntry(map.get("Hours"));
+		for (String key : map.keySet()) {
+			switch (key) {
+			case "Date":
+				DateTimeFormatter expDateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+				DateTimeFormatter actDateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+				LocalDate expDate = LocalDate.parse(map.get(key), expDateFormatter);
+				LocalDate actDate = LocalDate.parse(act.get(key), actDateFormatter);
+				sa.assertTrue(actDate.isEqual(expDate),
+						"Comparison For: " + key + "|Actual: " + act.get(key) + "|Expected: " + map.get(key) + "|");
+				break;
+			default:
+				sa.assertTrue(act.get(key).contains(map.get(key)),
+						"Comparison For: " + key + "|Actual: " + act.get(key) + "|Expected: " + map.get(key) + "|");
 				break;
 			}
 		}
