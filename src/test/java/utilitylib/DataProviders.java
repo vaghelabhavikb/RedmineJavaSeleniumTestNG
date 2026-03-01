@@ -14,7 +14,7 @@ import static config.EnvVars.tdUsersPath;
 public class DataProviders {
 
 	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch(tdProjectsPath, "CreateIssues");
-	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch(tdProjectsPath, "PostTimes");
+	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch(tdProjectsPath, "PostSpentTime");
 	JsonTestDataFetch createUsersJson = new JsonTestDataFetch(tdUsersPath, "CreateUsers");
 
 	@DataProvider(name = "ProjectNames")
