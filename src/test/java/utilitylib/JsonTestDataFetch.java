@@ -28,10 +28,10 @@ public class JsonTestDataFetch {
 	public ArrayList<String> tdList = new ArrayList<String>();
 	public HashMap<String, ArrayList<String>> tdMap = new HashMap<String, ArrayList<String>>();
 	
-	public JsonTestDataFetch(String fileName) {
+	public JsonTestDataFetch(Path path, String fileName) {
 
 		try {
-			docReader = JsonPath.parse(tdProjectsPath.resolve(Paths.get(fileName + jsonFileExt)).toAbsolutePath().toFile());
+			docReader = JsonPath.parse(path.resolve(Paths.get(fileName + jsonFileExt)).toAbsolutePath().toFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
