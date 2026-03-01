@@ -14,10 +14,14 @@ public class LandingPage {
 	}
 	
 	By projectsLK = By.linkText("Projects");
-	
+	By adminLK = By.linkText("Administration");
 	
 	public void navToProjectsPage() {
 		cmd.click(projectsLK);
+	}
+	
+	public void navToAdminPage() {
+		cmd.click(adminLK);
 	}
 	
 }

@@ -8,10 +8,14 @@ import java.util.Map;
 
 import org.testng.annotations.DataProvider;
 
+import static config.EnvVars.tdProjectsPath;
+import static config.EnvVars.tdUsersPath;
+
 public class DataProviders {
 
-	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch("CreateIssues");
-	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch("PostSpentTime");
+	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch(tdProjectsPath, "CreateIssues");
+	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch(tdProjectsPath, "PostTimes");
+	JsonTestDataFetch createUsersJson = new JsonTestDataFetch(tdUsersPath, "CreateUsers");
 
 	@DataProvider(name = "ProjectNames")
 	public Object[] projectNames() {
@@ -54,6 +58,13 @@ public class DataProviders {
 		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
 		listMaps = postSpentTimeJson.getJsonObjInJsonArray("PostTime");
 		return new Object[] { listMaps.get(0), listMaps.get(1), listMaps.get(2) };
+	}
+
+	@DataProvider(name = "CreateUsers")
+	public Object[] createUsers() {
+		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
+		listMaps = createUsersJson.getJsonObjInJsonArray("users");
+		return new Object[] { listMaps.get(0), listMaps.get(1) };
 	}
 
 }
