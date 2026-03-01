@@ -1,0 +1,19 @@
+{
+	"users": [
+		{
+			"Login": "JoeUpton",
+			"First name": "Joe",
+			"Last name": "Upton",
+			"Email": "JoeUpton@Gmail.com",
+			"Administrator": "Yes",
+			"Password": "JoeUpton@123"
+		},
+		{
+			"Login": "GeryNewman",
+			"First name": "Gery",
+			"Last name": "Newman",
+			"Email": "GeryNewman@Gmail.com",
+			"Password": "GeryNewman@123"
+		}
+	]
+}
