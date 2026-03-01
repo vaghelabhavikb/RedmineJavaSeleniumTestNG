@@ -4,7 +4,7 @@
 	<classes>
 			<class name="tests.Users">
 				<methods>	
-					<include name="createUsers" />					
+					<include name="postTimeSpent" />				
 				</methods>
 			</class>		
     </classes>

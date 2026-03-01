@@ -8,6 +8,7 @@
 
 		<classes>
 			<class name="tests.Projects"/>
+	
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
