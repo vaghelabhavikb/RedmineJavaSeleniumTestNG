@@ -59,8 +59,7 @@ public class WebDriverUtilities {
 	public void sliderValueIncrease(By by) {
 		ww.until(ExpectedConditions.elementToBeClickable(by)).click();
 		Actions ac = new Actions(driver);
-		ac.pause(Duration.ofSeconds(2)).sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT).build()
-		    .perform();
+		ac.pause(Duration.ofSeconds(2)).sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT).build().perform();
 	}
 
 	public WebElement findElement(By by) {
@@ -75,7 +74,7 @@ public class WebDriverUtilities {
 		}
 		return true;
 	}
-	
+
 	public boolean isElementVisible(By by) {
 		WebElement ele = null;
 		try {
@@ -240,7 +239,7 @@ public class WebDriverUtilities {
 	public Select getSelectElement(By by) {
 		return new Select(ww.until(ExpectedConditions.presenceOfElementLocated(by)));
 	}
-	
+
 	public void selectByValue(By by, String value) {
 		getSelectElement(by).selectByContainsVisibleText(value);
 	}
@@ -266,8 +265,12 @@ public class WebDriverUtilities {
 		WebElement table = driver.findElement(by);
 		List<WebElement> rows = table.findElements(By.xpath("//tbody/tr"));
 		List<List<WebElement>> tableData = new ArrayList<List<WebElement>>();
-		for (WebElement webElement : rows) {
-			tableData.add(webElement.findElements(By.tagName("td")));
+
+		for (int i = 0; i < rows.size(); i++) {
+			tableData.add(rows.get(i).findElements(By.tagName("td")));
+//			for (WebElement ele : rows.get(i).findElements(By.tagName("td"))) {
+//				System.out.println(ele.getText());
+//			}
 		}
 		return tableData;
 	}
@@ -317,7 +320,7 @@ public class WebDriverUtilities {
 		File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(f,
-			    new File(resultFolderPath + fileName + Instant.now().toString().replace(":", "-") + ".png"));
+					new File(resultFolderPath + fileName + Instant.now().toString().replace(":", "-") + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -353,8 +356,7 @@ public class WebDriverUtilities {
 		}
 	}
 
-	public void jsScrollDownViewPointWithinPageTillEleIsDisplayed(By scrollView, By by,
-	    int maxScrollCount) {
+	public void jsScrollDownViewPointWithinPageTillEleIsDisplayed(By scrollView, By by, int maxScrollCount) {
 		WebElement scrollableEle = findElement(scrollView);
 		Rectangle rec = scrollableEle.getRect();
 		int scrollHeight = rec.getHeight();
@@ -477,14 +479,11 @@ public class WebDriverUtilities {
 //		wait(20);
 		PointerInput input = new PointerInput(Kind.MOUSE, "default mouse");
 		Sequence seq = new Sequence(input, 0);
-		seq.addAction(
-		    input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), sX, sY));
+		seq.addAction(input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), sX, sY));
 		seq.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-		seq.addAction(
-		    input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), eX, eY));
+		seq.addAction(input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), eX, eY));
 		seq.addAction(input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), 0, 0));
-		seq.addAction(
-		    input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), eX, eY));
+		seq.addAction(input.createPointerMove(Duration.ofSeconds(2), PointerInput.Origin.viewport(), eX, eY));
 		seq.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
 		((RemoteWebDriver) driver).perform(Collections.singletonList(seq));
@@ -492,6 +491,14 @@ public class WebDriverUtilities {
 
 	public boolean isSelected(By by) {
 		return ww.until(ExpectedConditions.visibilityOfElementLocated(by)).isSelected();
+	}
+
+	public Select getSelectEle(By by) {
+		return new Select(findElement(by));
+	}
+
+	public void selectByVisibleText(By by, String text) {
+		getSelectEle(by).selectByVisibleText(text);
 	}
 
 }
