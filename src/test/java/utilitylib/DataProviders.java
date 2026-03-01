@@ -14,6 +14,7 @@ import static config.EnvVars.tdUsersPath;
 public class DataProviders {
 
 	JsonTestDataFetch createIssuesJson = new JsonTestDataFetch(tdProjectsPath, "CreateIssues");
+	JsonTestDataFetch postSpentTimeJson = new JsonTestDataFetch(tdProjectsPath, "PostTimes");
 	JsonTestDataFetch createUsersJson = new JsonTestDataFetch(tdUsersPath, "CreateUsers");
 
 	@DataProvider(name = "ProjectNames")
@@ -50,6 +51,13 @@ public class DataProviders {
 		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
 		listMaps = createIssuesJson.getJsonObjInJsonArray("issues");
 		return new Object[] { listMaps.get(0), listMaps.get(1) };
+	}
+
+	@DataProvider(name = "PostSpentTime")
+	public Object[] postSpentTime() {
+		List<LinkedHashMap<String, String>> listMaps = new ArrayList<LinkedHashMap<String, String>>();
+		listMaps = postSpentTimeJson.getJsonObjInJsonArray("PostTime");
+		return new Object[] { listMaps.get(0), listMaps.get(1), listMaps.get(2) };
 	}
 
 	@DataProvider(name = "CreateUsers")
