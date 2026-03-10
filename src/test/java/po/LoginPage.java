@@ -19,8 +19,15 @@ public class LoginPage {
 	By passwordTB = By.name("password");
 	By loginBTN = By.name("login");
 
-	public void navToLoginPage() {
-		cmd.driver.get(EnvVars.baseURL);
+	public void navToLoginPage(String browser) {
+		switch (browser) {
+		case "chrome":
+			cmd.driver.get(EnvVars.baseURL1);
+			break;
+		case "firefox":
+			cmd.driver.get(EnvVars.baseURL2);
+			break;
+		}
 		cmd.click(signinLk);
 	}
 

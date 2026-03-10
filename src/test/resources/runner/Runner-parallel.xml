@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="testnglib.TestListeners" />
+	</listeners>
+
+	<test name="Execution on Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="tests.Projects" />
+			<!-- <class name="tests.Users" /> -->
+		</classes>
+	</test>
+	<test name="Execution on Firefox">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="tests.Projects" />
+			<!-- <class name="tests.Users"/> -->
+		</classes>
+	</test>
+</suite>
