@@ -8,31 +8,42 @@
       <![CDATA[As this is an optional field, continuing with the Project creation assuming this as bad data]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-02-28T16:47:53 IST" name="Suite" finished-at="2026-02-28T16:49:56 IST" duration-ms="122737">
+  <suite started-at="2026-03-10T10:31:15 IST" name="Suite" finished-at="2026-03-10T10:33:27 IST" duration-ms="132280">
     <groups>
       <group name="regression">
-        <method signature="Projects.createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@568ff82]" name="createProjWithOptionalFields" class="tests.Projects"/>
-        <method signature="Projects.postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" name="postTimeSpent" class="tests.Projects"/>
+        <method signature="Projects.createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@2a266d09]" name="createProjWithOptionalFields" class="tests.Projects"/>
+        <method signature="Projects.postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" name="postTimeSpent" class="tests.Projects"/>
       </group> <!-- regression -->
       <group name="smoke">
-        <method signature="Projects.createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" name="createIssues" class="tests.Projects"/>
-        <method signature="Projects.createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@568ff82]" name="createProjectWithName" class="tests.Projects"/>
+        <method signature="Projects.createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" name="createIssues" class="tests.Projects"/>
+        <method signature="Projects.createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" name="createProjectWithName" class="tests.Projects"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2026-02-28T16:47:53 IST" name="Test" finished-at="2026-02-28T16:49:56 IST" duration-ms="122737">
+    <test started-at="2026-03-10T10:31:15 IST" name="Test" finished-at="2026-03-10T10:33:27 IST" duration-ms="132280">
       <class name="tests.Projects">
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:47:53 IST" name="setUp" finished-at="2026-02-28T16:48:05 IST" duration-ms="11972" status="PASS">
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:15 IST" name="commonSetup" finished-at="2026-03-10T10:31:30 IST" duration-ms="15613" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:30 IST" name="setUp" finished-at="2026-03-10T10:31:31 IST" duration-ms="330" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:05 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-02-28T16:48:18 IST" duration-ms="12186" status="PASS">
+        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:31 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-03-10T10:31:42 IST" duration-ms="11132" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,22 +55,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createIssues -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:18 IST" name="tearDown" finished-at="2026-02-28T16:48:18 IST" duration-ms="851" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:42 IST" name="commonTearDown" finished-at="2026-03-10T10:31:43 IST" duration-ms="585" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:18 IST" name="setUp" finished-at="2026-02-28T16:48:28 IST" duration-ms="9112" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:43 IST" name="commonSetup" finished-at="2026-03-10T10:31:51 IST" duration-ms="8423" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:51 IST" name="setUp" finished-at="2026-03-10T10:31:51 IST" duration-ms="350" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:28 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-02-28T16:48:31 IST" duration-ms="3698" status="PASS">
+        <test-method signature="createIssues(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:51 IST" name="createIssues" description="Create issues for a project" data-provider="CreateIssues" finished-at="2026-03-10T10:31:56 IST" duration-ms="4516" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,22 +92,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createIssues -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:31 IST" name="tearDown" finished-at="2026-02-28T16:48:31 IST" duration-ms="223" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:56 IST" name="commonTearDown" finished-at="2026-03-10T10:31:56 IST" duration-ms="434" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:31 IST" name="setUp" finished-at="2026-02-28T16:48:40 IST" duration-ms="8366" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:31:56 IST" name="commonSetup" finished-at="2026-03-10T10:32:05 IST" duration-ms="8698" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:05 IST" name="setUp" finished-at="2026-03-10T10:32:05 IST" duration-ms="325" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:40 IST" name="createProjWithOptionalFields" description="Create a project with optional fields" data-provider="ProjectDetailsWithOptionalFields" finished-at="2026-02-28T16:48:42 IST" duration-ms="2062" status="PASS">
+        <test-method signature="createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:05 IST" name="createProjWithOptionalFields" description="Create a project with optional fields" data-provider="ProjectDetailsWithOptionalFields" finished-at="2026-03-10T10:32:08 IST" duration-ms="2761" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -96,22 +129,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProjWithOptionalFields -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:42 IST" name="tearDown" finished-at="2026-02-28T16:48:42 IST" duration-ms="209" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:08 IST" name="commonTearDown" finished-at="2026-03-10T10:32:09 IST" duration-ms="466" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:42 IST" name="setUp" finished-at="2026-02-28T16:48:52 IST" duration-ms="9964" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:09 IST" name="commonSetup" finished-at="2026-03-10T10:32:17 IST" duration-ms="8530" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:17 IST" name="setUp" finished-at="2026-03-10T10:32:17 IST" duration-ms="360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:52 IST" name="createProjWithOptionalFields" description="Create a project with optional fields" data-provider="ProjectDetailsWithOptionalFields" finished-at="2026-02-28T16:48:55 IST" duration-ms="2848" status="PASS">
+        <test-method signature="createProjWithOptionalFields(java.util.Map)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:17 IST" name="createProjWithOptionalFields" description="Create a project with optional fields" data-provider="ProjectDetailsWithOptionalFields" finished-at="2026-03-10T10:32:20 IST" duration-ms="2314" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -128,22 +172,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
             </line>
           </reporter-output>
         </test-method> <!-- createProjWithOptionalFields -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:55 IST" name="tearDown" finished-at="2026-02-28T16:48:55 IST" duration-ms="220" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:20 IST" name="commonTearDown" finished-at="2026-03-10T10:32:20 IST" duration-ms="279" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:48:55 IST" name="setUp" finished-at="2026-02-28T16:49:04 IST" duration-ms="8363" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:20 IST" name="commonSetup" finished-at="2026-03-10T10:32:29 IST" duration-ms="9052" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:29 IST" name="setUp" finished-at="2026-03-10T10:32:29 IST" duration-ms="349" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:04 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-02-28T16:49:05 IST" duration-ms="1280" status="PASS">
+        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:29 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-03-10T10:32:31 IST" duration-ms="1939" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -154,22 +209,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProjectWithName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:05 IST" name="tearDown" finished-at="2026-02-28T16:49:05 IST" duration-ms="348" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:31 IST" name="commonTearDown" finished-at="2026-03-10T10:32:32 IST" duration-ms="476" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:05 IST" name="setUp" finished-at="2026-02-28T16:49:14 IST" duration-ms="9040" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:32 IST" name="commonSetup" finished-at="2026-03-10T10:32:41 IST" duration-ms="9146" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:41 IST" name="setUp" finished-at="2026-03-10T10:32:41 IST" duration-ms="383" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:14 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-02-28T16:49:16 IST" duration-ms="1446" status="PASS">
+        <test-method signature="createProjectWithName(java.lang.String)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:41 IST" name="createProjectWithName" description="Create a project with only name field" data-provider="ProjectNames" finished-at="2026-03-10T10:32:43 IST" duration-ms="1979" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -180,22 +246,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProjectWithName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:16 IST" name="tearDown" finished-at="2026-02-28T16:49:16 IST" duration-ms="331" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:43 IST" name="commonTearDown" finished-at="2026-03-10T10:32:44 IST" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:16 IST" name="setUp" finished-at="2026-02-28T16:49:25 IST" duration-ms="8915" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:44 IST" name="commonSetup" finished-at="2026-03-10T10:32:53 IST" duration-ms="9267" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:53 IST" name="setUp" finished-at="2026-03-10T10:32:53 IST" duration-ms="387" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:25 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-02-28T16:49:29 IST" duration-ms="4487" status="PASS">
+        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:53 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-03-10T10:32:59 IST" duration-ms="5278" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -206,22 +283,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postTimeSpent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:29 IST" name="tearDown" finished-at="2026-02-28T16:49:30 IST" duration-ms="225" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:59 IST" name="commonTearDown" finished-at="2026-03-10T10:32:59 IST" duration-ms="378" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:30 IST" name="setUp" finished-at="2026-02-28T16:49:38 IST" duration-ms="8674" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:32:59 IST" name="commonSetup" finished-at="2026-03-10T10:33:07 IST" duration-ms="8157" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:07 IST" name="setUp" finished-at="2026-03-10T10:33:07 IST" duration-ms="332" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:38 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-02-28T16:49:42 IST" duration-ms="3764" status="PASS">
+        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:07 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-03-10T10:33:12 IST" duration-ms="4929" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -232,22 +320,33 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postTimeSpent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:42 IST" name="tearDown" finished-at="2026-02-28T16:49:42 IST" duration-ms="238" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:12 IST" name="commonTearDown" finished-at="2026-03-10T10:33:13 IST" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:42 IST" name="setUp" finished-at="2026-02-28T16:49:51 IST" duration-ms="8626" status="PASS">
+        </test-method> <!-- commonTearDown -->
+        <test-method is-config="true" signature="commonSetup(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:13 IST" name="commonSetup" finished-at="2026-03-10T10:33:22 IST" duration-ms="9397" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25ce9dc4]]>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonSetup -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:22 IST" name="setUp" finished-at="2026-03-10T10:33:22 IST" duration-ms="343" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2034b64c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:51 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-02-28T16:49:56 IST" duration-ms="4886" status="PASS">
+        <test-method signature="postTimeSpent(java.util.LinkedHashMap)[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:22 IST" name="postTimeSpent" description="Post time spent for an issue" data-provider="PostSpentTime" finished-at="2026-03-10T10:33:27 IST" duration-ms="4345" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -258,10 +357,10 @@ User can also add/remove/edit the inserted DocID, Status=Open, Priority=Medium, 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postTimeSpent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Projects@568ff82]" started-at="2026-02-28T16:49:56 IST" name="tearDown" finished-at="2026-02-28T16:49:56 IST" duration-ms="239" status="PASS">
+        <test-method is-config="true" signature="commonTearDown()[pri:0, instance:tests.Projects@2a266d09]" started-at="2026-03-10T10:33:27 IST" name="commonTearDown" finished-at="2026-03-10T10:33:27 IST" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
+        </test-method> <!-- commonTearDown -->
       </class> <!-- tests.Projects -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
