@@ -20,8 +20,9 @@ public class EnvVars {
 	public static String resultFolderPath = System.getProperty("user.dir") + "\\Result\\";
 	public static String logFilePath = resultFolderPath + "Log\\log.txt";
 
-	public static final String baseURL = "http://localhost:3000/";
-
+	public static final String baseURL1 = "http://localhost:3000/";
+	public static final String baseURL2 = "http://localhost:3001/";
+	
 	public static final String jsonFileExt = ".json";
 	public static final String propertiesFileExt = ".properties";
 	public static final String excelFileExt = ".xlsx";
