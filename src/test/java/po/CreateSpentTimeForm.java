@@ -29,7 +29,14 @@ public class CreateSpentTimeForm {
 		cmd.sendText(issueSelector, data.get("Issue"));
 		cmd.click(supportEditTimeIssue);
 		cmd.selectByVisibleText(userSelect, data.get("User"));
-		cmd.sendText(datePicker, data.get("Date"));
+		switch (cmd.getBrowserName()) {
+		case CHROME:
+			cmd.sendText(datePicker, data.get("Date"));
+			break;
+		case FIREFOX:
+			cmd.actionsSendText(datePicker, data.get("Date"));
+			break;
+		}
 		cmd.sendText(hoursTB, data.get("Hours"));
 		if (data.containsKey("Comment")) {
 			cmd.sendText(commentTB, data.get("Comment"));

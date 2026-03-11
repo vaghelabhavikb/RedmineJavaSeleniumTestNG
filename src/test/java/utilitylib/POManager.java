@@ -19,6 +19,7 @@ import po.UsersQueryPage;
 public class POManager {
 
 	public WebDriver driver;
+	public String browserName;
 	
 	//Common class
 	private LoginPage loginPage;

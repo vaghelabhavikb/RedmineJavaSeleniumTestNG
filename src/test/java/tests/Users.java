@@ -11,7 +11,7 @@ public class Users extends Common{
 	
 
 	@BeforeMethod(alwaysRun = true)
-	public void setUp() {
+	public void usersTCSetUp() {
 		po.landingPage().navToAdminPage();
 	}
 

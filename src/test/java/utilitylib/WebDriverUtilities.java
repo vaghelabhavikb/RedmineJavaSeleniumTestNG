@@ -34,6 +34,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import config.BrowserNames;
 import config.DriverWait;
 
 public class WebDriverUtilities {
@@ -50,6 +51,19 @@ public class WebDriverUtilities {
 		ww = new WebDriverWait(driver, Duration.ofSeconds(normalww));
 		wwShort = new WebDriverWait(driver, Duration.ofSeconds(shortww));
 		js = (JavascriptExecutor) driver;
+	}
+
+	public BrowserNames getBrowserName() {
+		String name = ((RemoteWebDriver) driver).getCapabilities().getBrowserName();
+
+		switch (name) {
+		case "chrome":
+			return BrowserNames.CHROME;
+		case "firefox":
+			return BrowserNames.FIREFOX;
+		default:
+			return null;
+		}
 	}
 
 	public void click(By by) {
@@ -181,8 +195,7 @@ public class WebDriverUtilities {
 	}
 
 	public void sendText(By by, String str) {
-		CharSequence cs = str;
-		ww.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(cs);
+		ww.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(str);
 	}
 
 	public void clearText(By by) {
@@ -193,11 +206,11 @@ public class WebDriverUtilities {
 		ww.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(key);
 	}
 
-	public void keyboardSendText(By by, String str) {
+	public void actionsSendText(By by, String str) {
 		new Actions(driver).sendKeys(findElement(by), str).build().perform();
 	}
 
-	public void keyboardSendText(By by, Keys key) {
+	public void actionsSendText(By by, Keys key) {
 		new Actions(driver).sendKeys(findElement(by), key).build().perform();
 	}
 
@@ -275,18 +288,19 @@ public class WebDriverUtilities {
 		return tableData;
 	}
 
-	public List<Map<String,String>> getTableDataMap(By by) {
+	public List<Map<String, String>> getTableDataMap(By by) {
 		WebElement table = findElement(by);
 		List<WebElement> rows = table.findElements(By.xpath("//tbody/tr"));
 		List<WebElement> headers = table.findElements(By.xpath("(//tr)[1]/th"));
-		List<Map<String,String>> tableData = new ArrayList<Map<String,String>>();
+		List<Map<String, String>> tableData = new ArrayList<Map<String, String>>();
 
 		for (int i = 0; i < rows.size(); i++) {
 			List<WebElement> rowEles = rows.get(i).findElements(By.tagName("td"));
 			tableData.add(new HashMap<String, String>());
-			for (int j = 0; j< headers.size(); j++) {
-				if(!headers.get(j).getText().equals("")) {
-					tableData.get(i).put(headers.get(j).getText(), rows.get(i).findElements(By.tagName("td")).get(j).getText());
+			for (int j = 0; j < headers.size(); j++) {
+				if (!headers.get(j).getText().equals("")) {
+					tableData.get(i).put(headers.get(j).getText(),
+							rows.get(i).findElements(By.tagName("td")).get(j).getText());
 				}
 			}
 //			for (WebElement ele : rows.get(i).findElements(By.tagName("td"))) {
@@ -295,7 +309,7 @@ public class WebDriverUtilities {
 		}
 		return tableData;
 	}
-	
+
 	public List<WebElement> findMultiElement(By by) {
 //	public List<WebElement> findMultiElement(By by, int minElementsCount, int findAllAttemptCount){
 		return ww.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
