@@ -6,15 +6,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class Projects extends Common {
-
-	WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
 	public void projectsTCSetUp() {
