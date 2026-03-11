@@ -8,8 +8,9 @@ import org.testng.Reporter;
 
 import utilitylib.WebDriverUtilities;
 
-public class CreateIssueForm {
+public class CreateIssueForm{
 	WebDriverUtilities cmd;
+	String browserName;
 
 	public CreateIssueForm(WebDriver driver) {
 		cmd = new WebDriverUtilities(driver);
@@ -44,7 +45,17 @@ public class CreateIssueForm {
 				cmd.selectByValue(prioritySelect, map.get(key));
 				break;
 			case "StartDate":
-				cmd.sendText(startDatePicker, map.get(key));
+				switch (cmd.getBrowserName()) {
+				case CHROME:
+					cmd.sendText(startDatePicker, map.get(key));
+					break;
+				case FIREFOX:
+					cmd.actionsSendText(startDatePicker, map.get(key));
+					break;
+				default:
+					Reporter.log("Unknown browser detected: " + cmd.getBrowserName());
+					break;
+				}
 				break;
 			case "EstimatedTime":
 				cmd.sendText(estimatedTime, map.get(key));

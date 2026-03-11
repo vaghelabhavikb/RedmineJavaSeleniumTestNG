@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
 	<listeners>
-		<listener class-name="testnglib.TestListeners" />
+		<listener class-name="testnglib.OnFailureListeners" />
 	</listeners>
 	<test name="Test">
+	<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="tests.Users">
+			<class name="tests.Projects">
 				<methods>
-					<include name="createUsers" />
+					<include name="postTimeSpent" />
 				</methods>
 			</class>
 		</classes>

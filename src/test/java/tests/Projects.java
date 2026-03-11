@@ -12,13 +12,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Projects extends Common{
+public class Projects extends Common {
 
 	WebDriver driver;
 
-
 	@BeforeMethod(alwaysRun = true)
-	public void setUp() {
+	public void projectsTCSetUp() {
 		po.landingPage().navToProjectsPage();
 	}
 

@@ -27,13 +27,14 @@ public class Common {
 	@Parameters({"browser"})
 	@BeforeMethod(alwaysRun = true)
 	public void commonSetup(ITestContext context, String b) {
+
 		driver = new BaseClass().getDriverInstance(b);
 
 		context.setAttribute("driver", driver);
-
+		
 		po = new POManager(driver);
 
-		po.loginPage().navToLoginPage(b);
+		po.loginPage().navToLoginPage();
 		po.loginPage().login(loginJson.getTD("$['Main User']['UserName']"),
 				loginJson.getTD("$['Main User']['Password']"));
 	}

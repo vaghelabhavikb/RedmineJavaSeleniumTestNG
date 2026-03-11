@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 import config.EnvVars;
 import utilitylib.WebDriverUtilities;
 
-public class LoginPage {
+public class LoginPage{
 
 	WebDriverUtilities cmd;
-
+	
 	public LoginPage(WebDriver driver) {
 		cmd = new WebDriverUtilities(driver);
 	}
@@ -19,12 +19,12 @@ public class LoginPage {
 	By passwordTB = By.name("password");
 	By loginBTN = By.name("login");
 
-	public void navToLoginPage(String browser) {
-		switch (browser) {
-		case "chrome":
+	public void navToLoginPage() {
+		switch (cmd.getBrowserName()) {
+		case CHROME:
 			cmd.driver.get(EnvVars.baseURL1);
 			break;
-		case "firefox":
+		case FIREFOX:
 			cmd.driver.get(EnvVars.baseURL2);
 			break;
 		}
