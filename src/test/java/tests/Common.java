@@ -25,11 +25,11 @@ public class Common {
 		loginJson = new JsonTestDataFetch(jsonTDPath.resolve("LoginCredentials.json"));
 	}
 	
-	@Parameters({"browser"})
+	@Parameters({"browser", "headless"})
 	@BeforeMethod(alwaysRun = true)
-	public void commonSetup(ITestContext context,@Optional("chrome") String b) {
+	public void commonSetup(ITestContext context,@Optional("chrome") String b, @Optional("false") boolean executeHeadless) {
 
-		driver = new BaseClass().getDriverInstance(b);
+		driver = new BaseClass().getDriverInstance(b, executeHeadless);
 
 		context.setAttribute("driver", driver);
 		

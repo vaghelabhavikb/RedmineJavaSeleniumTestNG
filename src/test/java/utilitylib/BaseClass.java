@@ -16,7 +16,7 @@ public class BaseClass {
 //		new BaseClass().getDriverInstance();
 //	}
 
-	public WebDriver getDriverInstance(String browser) {
+	public WebDriver getDriverInstance(String browser, boolean headless) {
 		if (browser.equalsIgnoreCase("chrome")) {
 
 			ChromeOptions co = new ChromeOptions();
@@ -24,7 +24,10 @@ public class BaseClass {
 			co.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 //		co.setHeadless(true); // this is old method won't work properly in some cases
 //		https://developer.chrome.com/articles/new-headless/
-//		co.addArguments("--headless=new");
+			if (headless) {
+				co.addArguments("--headless=new");
+				co.addArguments("--window-size=1366,768");
+			}
 			co.addArguments("--start-maximized");
 			co.addArguments("--remote-allow-origins=*");
 			HashMap<String, Object> map = new HashMap<String, Object>();
@@ -36,6 +39,9 @@ public class BaseClass {
 			return wd;
 		} else {
 			FirefoxOptions fo = new FirefoxOptions();
+			if (headless) {
+				fo.addArguments("-headless");
+			}
 			fo.setAcceptInsecureCerts(true);
 			fo.addPreference("dom.webdriver.enabled", false); // Similar to excluding enable-automation
 			fo.addPreference("useAutomationExtension", false);
