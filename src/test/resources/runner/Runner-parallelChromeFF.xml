@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="tests" thread-count="2">
 	<listeners>
-		<listener class-name="testnglib.OnFailureListeners" />
+		<listener class-name="testnglib.OnTestFailure" />
+		<listener class-name="testnglib.OnConfigFailure" />
 	</listeners>
 
 	<test name="Execution on Chrome">
 		<parameter name="browser" value="chrome" />
+		<parameter name="headless" value="true" />
 		<classes>
 			<class name="tests.Projects" />
 			<class name="tests.Users" />
@@ -13,6 +15,7 @@
 	</test>
 	<test name="Execution on Firefox">
 		<parameter name="browser" value="firefox" />
+		<parameter name="headless" value="true" />
 		<classes>
 			<class name="tests.Projects" />
 			<class name="tests.Users"/>

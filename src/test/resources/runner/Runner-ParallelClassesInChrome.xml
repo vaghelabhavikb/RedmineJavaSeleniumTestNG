@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="classes" thread-count="2">
-
+	<listeners>
+		<listener class-name="testnglib.OnTestFailure" />
+		<listener class-name="testnglib.OnConfigFailure" />
+	</listeners>
 
 	<test name="Test">
-
+	<parameter name="headless" value="false" />
 		<!-- <groups> <run> <include name="sprintwork"/> </run> </groups> -->
 
 		<classes>

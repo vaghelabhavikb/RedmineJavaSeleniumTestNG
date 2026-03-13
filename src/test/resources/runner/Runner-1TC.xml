@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
 	<listeners>
-		<listener class-name="testnglib.OnFailureListeners" />
+		<listener class-name="testnglib.OnTestFailure" />
+		<listener class-name="testnglib.OnConfigFailure" />
 	</listeners>
 	<test name="Test">
-	<parameter name="browser" value="chrome" />
+	<parameter name="headless" value="false" />
 		<classes>
 			<class name="tests.Projects">
 				<methods>
