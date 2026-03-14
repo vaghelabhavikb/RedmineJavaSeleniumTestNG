@@ -7,6 +7,7 @@ public class EnvVars {
 
 //	public static String testDataFolderPath = System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\";
 	public static final Path tdFolderPath = Paths.get("src", "test", "resources", "TestData");
+	public static final Path configDataFolderPath = Paths.get("src", "test", "resources", "ConfigData");
 	public static final Path jsonTDPath = tdFolderPath.resolve("JsonData");
 	public static final Path tdProjectsPath = jsonTDPath.resolve("Projects");
 	public static final Path tdUsersPath = jsonTDPath.resolve("Users");
@@ -20,8 +21,8 @@ public class EnvVars {
 	public static String resultFolderPath = System.getProperty("user.dir") + "\\Result\\";
 	public static String logFilePath = resultFolderPath + "Log\\log.txt";
 
-	public static final String baseURL1 = "http://localhost:3000/";
-	public static final String baseURL2 = "http://localhost:3001/";
+	public static final String baseURL1 = "http://127.0.0.1:3000/"; 
+	public static final String baseURL2 = "http://127.0.0.1:3001/";// don't use localhost as it is interfering with FireFox Cookies addition
 	
 	public static final String jsonFileExt = ".json";
 	public static final String propertiesFileExt = ".properties";

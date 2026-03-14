@@ -6,9 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import utilitylib.AuthStateManager;
 import utilitylib.BaseClass;
 import utilitylib.JsonTestDataFetch;
 import utilitylib.POManager;
@@ -16,6 +18,7 @@ import utilitylib.POManager;
 public class Common {
 
 	public WebDriver driver;
+	public WebDriver wd;
 
 	POManager po;
 
@@ -24,24 +27,55 @@ public class Common {
 	public Common() {
 		loginJson = new JsonTestDataFetch(jsonTDPath.resolve("LoginCredentials.json"));
 	}
-	
-	@Parameters({"browser", "headless"})
-	@BeforeMethod(alwaysRun = true)
-	public void commonSetup(ITestContext context,@Optional("chrome") String b, @Optional("false") boolean executeHeadless) {
 
-		driver = new BaseClass().getDriverInstance(b, executeHeadless);
+	@Parameters({ "browser", "headless" })
+	@BeforeTest(alwaysRun = true)
+	public void testSetup(ITestContext context, @Optional("chrome") String b,
+			@Optional("false") boolean executeHeadless) {
 
-		context.setAttribute("driver", driver);
-		
-		po = new POManager(driver);
+		wd = new BaseClass().getDriverInstance(b, executeHeadless);
+
+		context.setAttribute("driver", wd);
+
+		po = new POManager(wd);
 
 		po.loginPage().navToLoginPage();
 		po.loginPage().login(loginJson.getTD("$['Main User']['UserName']"),
 				loginJson.getTD("$['Main User']['Password']"));
+
+		try {
+			new AuthStateManager().createAndSaveAuthState(wd);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Parameters({ "browser", "headless" })
+	@BeforeMethod(alwaysRun = true)
+	public void commonMethodSetup(ITestContext context, @Optional("chrome") String b,
+			@Optional("false") boolean executeHeadless) {
+
+		driver = new BaseClass().getDriverInstance(b, executeHeadless);
+
+		context.setAttribute("driver", driver);
+
+		po = new POManager(driver);
+
+		po.landingPage().navToLandingPage();
+
+		try {
+			new AuthStateManager().applyAuthCookies(driver);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.navigate().refresh();
+
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void commonTearDown() {
+	public void commonMethodTearDown() {
 		driver.quit();
 	}
 

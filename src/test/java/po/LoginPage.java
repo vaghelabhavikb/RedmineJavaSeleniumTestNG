@@ -35,6 +35,7 @@ public class LoginPage{
 		cmd.sendText(usernameTB, un);
 		cmd.sendText(passwordTB, pw);
 		cmd.click(loginBTN);
+		cmd.waitForElementToBeVisible((new LandingPage()).projectsLK);
 	}
 
 }
